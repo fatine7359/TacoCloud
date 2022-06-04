@@ -23,6 +23,13 @@ public class OrderController {
 
     }
 
+    @PostMapping("/current")
+    public String showOrderForm1(Model model){
+        model.addAttribute("tacoOrder", new TacoOrder());
+        return "orderForm";
+
+    }
+
     @PostMapping
     public String processOrder(@Valid TacoOrder tacoOrder, Errors errors){
 
